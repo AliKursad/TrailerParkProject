@@ -7,40 +7,37 @@ using TrailerParkProject.Models;
 
 namespace TrailerParkProject.Services
 {
-    public class MovieService
+    public class CastService
     {
         private readonly DatabaseContext _db;
 
-        public MovieService(DatabaseContext db)
+        public CastService(DatabaseContext db)
         {
             _db = db;
         }
 
-        public List<Movies> GetAll()
+        public List<Cast> GetAll()
         {
-            return _db.Movies.ToList();
+            return _db.Cast.ToList();
         }
 
-        public Movies GetById(int id)
+        public Cast GetById(int id)
         {
-            return _db.Movies.FirstOrDefault(p => p.Id == id);
+            return _db.Cast.FirstOrDefault(p => p.Id == id);
         }
-
-        public void Add(Movies movie)
+        public void Add(Cast cast)
         {
-            _db.Movies.Add(movie);
+            _db.Cast.Add(cast);
             _db.SaveChanges();
         }
-
-        public void Update(Movies movie)
+        public void Update(Cast cast)
         {
-            _db.Movies.Update(movie);
+            _db.Cast.Update(cast);
             _db.SaveChanges();
         }
-
-        public void Delete(Movies movie)
+        public void Delete(Cast cast)
         {
-            _db.Movies.Remove(movie);
+            _db.Cast.Remove(cast);
             _db.SaveChanges();
         }
     }
