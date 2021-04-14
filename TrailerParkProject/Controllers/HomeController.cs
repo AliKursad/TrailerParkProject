@@ -33,6 +33,12 @@ namespace TrailerParkProject.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult GetAllMovies()
+        {
+            List<Movies> movies = _movieService.GetAll();
+            return View(movies);
+        }
+
         public IActionResult Privacy()
         {
             return View();

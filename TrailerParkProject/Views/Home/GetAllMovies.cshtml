@@ -1,0 +1,31 @@
+﻿@model List<Movies>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<table class="table table-striped table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Film Adı</th>
+            <th>Yıl</th>
+            <th>IMDB</th>
+            <th>Açıklama</th>
+            <th>Trailer Linki</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Title</td>
+            <td>@item.Year</td>
+            <td>@item.Rating</td>
+            <td>@item.Description</td>
+            <td>@item.TrailerLink</td>
+        </tr>
+    }
+
+</table>
