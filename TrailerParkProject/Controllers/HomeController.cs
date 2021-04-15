@@ -23,7 +23,8 @@ namespace TrailerParkProject.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            List<Movies> movies = _movieService.GetAll();
+            return View(movies);
         }
 
         public IActionResult CreateMovie(Movies movies)
